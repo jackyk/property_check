@@ -10,14 +10,7 @@ if (! defined ('ABSPATH')){
   exit;
 }
 
-function wp_register_post_type(){
-
-  $args = array('public'=> true, 'label'=>'Property');
-
-  register_post_type('All properties', $args);
-}
-
-add_action('init', 'wp_register_post_type');
-
+require (plugin_dir_path(__FILE__).'property_check_post_type.php');
+require (plugin_dir_path(__FILE__).'creating-meta-box.php');
 
 ?>
