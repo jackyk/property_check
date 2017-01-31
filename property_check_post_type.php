@@ -1,4 +1,6 @@
 <?php
+
+
 function pcwp_register_post_type(){
   $singular = 'Property List';
   $plural = 'Property Lists';
@@ -58,13 +60,12 @@ function pcwp_register_post_type(){
                                   ),
         'supports'            =>array(
           'title',
-          'editor',
-          'author',
-          'custom-fields',
+          // 'editor',
+          // 'author',
+          // 'custom-fields',
           // sets the featured image
           'thumbnail',
         )
-
       );
 
   register_post_type('All properties', $args);

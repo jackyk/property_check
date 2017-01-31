@@ -1,39 +1,39 @@
 <?php
 
-add_filter( 'rwmb_meta_boxes', 'YOURPREFIX_register_meta_boxes' );
-function YOURPREFIX_register_meta_boxes( $meta_boxes ) {
-    $prefix = 'rw_';
-    // 1st meta box
+add_filter( 'rwmb_meta_boxes', 'your_prefix_meta_boxes' );
+function your_prefix_meta_boxes( $meta_boxes ) {
     $meta_boxes[] = array(
-        'id'         => 'personal',
-        'title'      => __( 'Personal Information', 'textdomain' ),
-        'post_types' => array( 'post', 'page' ),
-        'context'    => 'normal',
-        'priority'   => 'high',
-        'fields' => array(
-            array(
-                'name'  => __( 'Full name', 'textdomain' ),
-                'desc'  => 'Format: First Last',
-                'id'    => $prefix . 'fname',
-                'type'  => 'text',
-                'std'   => 'Anh Tran',
-                'class' => 'custom-class',
-                'clone' => true,
-            ),
-        )
-    );
-    // 2nd meta box
-    $meta_boxes[] = array(
-        'title'      => __( 'Media', 'textdomain' ),
-        'post_types' => 'movie',
+        'title'      => __( 'Test Meta Box', 'textdomain' ),
+        'post_types' => 'All properties',
         'fields'     => array(
             array(
-                'name' => __( 'URL', 'textdomain' ),
-                'id'   => $prefix . 'url',
+                'id'   => 'name',
+                'name' => __( 'Property', 'textdomain' ),
                 'type' => 'text',
             ),
-        )
+        //     array(
+        //         'id'      => 'gender',
+        //         'name'    => __( 'Gender', 'textdomain' ),
+        //         'type'    => 'radio',
+        //         'options' => array(
+        //             'm' => __( 'Male', 'textdomain' ),
+        //             'f' => __( 'Female', 'textdomain' ),
+        //         ),
+        //     ),
+        //     array(
+        //         'id'   => 'email',
+        //         'name' => __( 'Email', 'textdomain' ),
+        //         'type' => 'email',
+        //     ),
+        //     array(
+        //         'id'   => 'bio',
+        //         'name' => __( 'Biography', 'textdomain' ),
+        //         'type' => 'textarea',
+        //     ),
+        ),
     );
     return $meta_boxes;
 }
+
+
 ?>
